@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comunidad Verde - EcoConecta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .bloque-comunidad {
+      margin: 2rem;
+      padding: 1.5rem;
+      border: 2px solid #4caf50;
+      border-radius: 12px;
+      background-color: #f0fff0;
+    }
+
+    .bloque-comunidad h2 {
+      color: #2e7d32;
+    }
+
+    .btn-ver {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-ver:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌱 Comunidad Verde</h1>
+    <p>Únete a personas como tú que están haciendo el cambio.</p>
+  </header>
+
+  <main>
+
+    <!-- Dentro del punto 1 del Comunidad Verde -->
+    <section class="bloque-comunidad" id="intercambio">
+      <h2>🗣 Muro de Acciones Verdes</h2>
+      <p>Usuarios pueden publicar pequeñas acciones sostenibles que hicieron (ej. "hoy planté un árbol", "dejé el auto en casa").</p>
+      <button onclick="window.location.href='/acciones'">Ir a ver ➜</button>
+    </section>
+
+
+    <section class="bloque-comunidad" id="intercambio">
+      <h2>♻️ Intercambio Ecológico</h2>
+      <p>Ofrece y busca cosas que ya no uses: ropa, libros, herramientas.</p>
+      <a href="/templates/intercambio.html" class="btn-ver">Ir a ver →</a>
+    </section>
+
+    <section class="bloque-comunidad" id="galeria">
+      <h2>📷 Galería Comunitaria</h2>
+      <p>Comparte tus fotos de naturaleza, proyectos, actividades sostenibles. #EcoHogar #MiHuerta</p>
+      <a href="#" class="btn-ver">Ir a ver →</a>
+    </section>
+
+    <section class="bloque-comunidad" id="sabiduria">
+      <h2>📚 Sabiduría Verde</h2>
+      <p>Tips, recetas, tutoriales ecológicos. Comparte lo que sabes o aprende de otros.</p>
+      <a href="#" class="btn-ver">Ir a ver →</a>
+    </section>
+
+    <section class="bloque-comunidad" id="debate">
+      <h2>🎙️ Espacio de Debate</h2>
+      <p>Foro para hablar sobre energías renovables, leyes verdes, activismo y más.</p>
+      <a href="#" class="btn-ver">Ir a ver →</a>
+    </section>
+    
+    <section class="bloque-comunidad" id="JUEGO">
+      <h2>JUEGO</h2>
+      <p>Prueba el nuevo juego de nuestro socio Pablo.</p>
+      <a href="#" class="btn-ver">Ir a ver →</a>
+    </section>
+
+    <!-- BOTÓN DE REGRESO -->
+    <div style="text-align: center; margin: 2rem;">
+      <a href="/" class="btn-ver">⬅ Volver al inicio</a>
+    </div>
+
+  </main>
+

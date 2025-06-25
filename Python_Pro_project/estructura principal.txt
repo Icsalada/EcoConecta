@@ -1,0 +1,21 @@
+.
+├── templates/
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── noticias.html
+│   ├── actua.html
+│   ├── comunidad.html
+│   ├── acciones.html
+│   ├── mapa.html
+│   ├── intercambio.html
+│   ├── retos.html
+│   ├── votaciones.html
+│   ├── galeria.html
+│   ├── sabiduria.html
+│   └── debate.html
+├── static/
+│   ├── style.css
+│   └── script.js
+├── main.py
+├── users.db

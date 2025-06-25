@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoConecta 🌎</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>EcoConecta 🌱</h1>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Inicio</a></li>
+        <li><a href="{{ url_for('noticias') }}">Noticias</a></li>
+        <li><a href="{{ url_for('actua') }}">Actúa Ya</a></li>
+        {% if 'user_id' in session %}
+          <li><a href="{{ url_for('comunidad') }}">Comunidad Verde</a></li>
+          <li><a href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+          <li><a href="{{ url_for('register') }}">Registrarse</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Bienvenido a EcoConecta</h2>
+      <p>Tu portal de acción y conciencia ambiental.</p>
+      <p>Explora noticias, actúa por el planeta y únete a una comunidad verde.</p>
+      <a href="{{ url_for('register') }}" class="btn-ver">Únete Ahora</a>
+    </section>
+
+    <section class="bloques-inicio">
+      <div class="bloque-comunidad">
+        <h2>🌍 Últimas Noticias Ambientales</h2>
+        <p>Infórmate sobre los eventos ecológicos más importantes del momento.</p>
+        <a href="{{ url_for('noticias') }}" class="btn-ver">Ver Noticias</a>
+      </div>
+
+      <div class="bloque-comunidad">
+        <h2>🚀 Actúa por el Planeta</h2>
+        <p>Descubre iniciativas locales y globales en las que puedes participar.</p>
+        <a href="{{ url_for('actua') }}" class="btn-ver">Actúa Ya</a>
+      </div>
+
+      {% if 'user_id' in session %}
+      <div class="bloque-comunidad">
+        <h2>🤝 Conéctate con la Comunidad Verde</h2>
+        <p>Comparte ideas, proyectos y eventos ecológicos con otros usuarios.</p>
+        <a href="{{ url_for('comunidad') }}" class="btn-ver">Ver Comunidad</a>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="cierre">
+      <h2>🌱 ¿Por qué EcoConecta?</h2>
+      <p>Porque el cambio empieza contigo. Esta plataforma está diseñada para que cada persona encuentre su forma de impactar positivamente el mundo.</p>
+      <p>¡Conecta, actúa y transforma!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoConecta. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Intercambio Ecológico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .contenedor {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .encabezado h1 {
+            margin: 0;
+        }
+
+        .btn-agregar {
+            background-color: #28a745;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tarjeta {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.02);
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .contenido {
+            padding: 1rem;
+        }
+
+        .contenido h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .contenido p {
+            color: #555;
+        }
+
+        .btn-ver {
+            margin-top: auto;
+            background-color: #007bff;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <h1>♻️ Intercambio Ecológico</h1>
+            <a href="{{ url_for('intercambio_agregar') }}" class="btn-agregar">+ Agregar Producto</a>
+        </div>
+
+        <div class="grid-productos">
+            {% for producto in productos %}
+            <div class="tarjeta">
+                {% if producto.imagen_url %}
+                <img src="{{ producto.imagen_url }}" alt="Imagen de {{ producto.titulo }}">
+                {% else %}
+                <img src="https://via.placeholder.com/300x180?text=Sin+imagen" alt="Sin imagen">
+                {% endif %}
+                <div class="contenido">
+                    <h2>{{ producto.titulo }}</h2>
+                    <p>{{ producto.descripcion[:100] }}{% if producto.descripcion|length > 100 %}...{% endif %}</p>
+                    <a href="{{ url_for('intercambio_detalle', id=producto.id) }}" class="btn-ver">Ver más</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

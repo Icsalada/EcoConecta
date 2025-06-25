@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Muro de Acciones Verdes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e8f5e9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    form {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #a5d6a7;
+      resize: none;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .accion {
+      background: #ffffff;
+      border-left: 6px solid #66bb6a;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .fecha {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    .volver-btn {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .volver-btn button {
+      background-color: #2e7d32;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>🍃 Muro de Acciones Verdes</h1>
+
+  {% if 'user_id' in session %}
+  <form method="POST">
+    <textarea name="contenido" rows="3" placeholder="¿Qué hiciste hoy por el planeta?" required></textarea><br>
+    <button type="submit">Publicar</button>
+  </form>
+  {% else %}
+  <p style="text-align:center;"><a href="{{ url_for('login') }}">Inicia sesión</a> para publicar tu acción verde.</p>
+  {% endif %}
+
+  <h2>Acciones recientes</h2>
+
+  {% for contenido, fecha, email in acciones %}
+    <div class="accion">
+      <strong>{{ email }}</strong> <span class="fecha">{{ fecha }}</span><br>
+      <p>{{ contenido }}</p>
+    </div>
+  {% endfor %}
+
+  <div class="volver-btn">
+    <button onclick="window.location.href='/comunidad'">← Volver a Comunidad Verde</button>
+  </div>
+
+</body>
+</html>

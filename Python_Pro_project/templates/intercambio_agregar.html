@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.3rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .boton {
+            margin-top: 1.5rem;
+            background-color: #28a745;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .boton:hover {
+            background-color: #218838;
+        }
+        .back-link {
+            display: block;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>🛒 Agregar Producto al Intercambio</h2>
+        <form action="{{ url_for('intercambio_agregar') }}" method="post">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" required>
+
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" id="descripcion" rows="5" required></textarea>
+
+            <label for="imagen_url">URL de la Imagen</label>
+            <input type="text" name="imagen_url" id="imagen_url">
+
+            <label for="contacto">Información de Contacto (opcional)</label>
+            <input type="text" name="contacto" id="contacto">
+
+            <button type="submit" class="boton">Publicar Producto</button>
+        </form>
+
+        <a href="{{ url_for('intercambio') }}" class="back-link">← Volver a la lista</a>
+    </div>
+</body>
+</html>

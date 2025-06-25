@@ -1,0 +1,303 @@
+/* Importar fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7f6;
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+/* Encabezado */
+header {
+  background-color: #1b4f38;
+  color: white;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #145638;
+}
+
+/* Contenido principal */
+main {
+  padding: 2.5rem;
+  background: #ffffff;
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #145638;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+/* Secciones */
+section {
+  padding: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Botones */
+button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+/* Formularios */
+form {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background-color: #1b4f38;
+  color: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Login / Register */
+.login-container {
+  max-width: 420px;
+  margin: 5rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+/* Mapa */
+#map {
+  height: 500px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #27ae60;
+}
+
+/* Vista de iniciativas */
+.iniciativas-lista {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.iniciativa-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.iniciativa-item:last-child {
+  border-bottom: none;
+}
+
+.iniciativa-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #1b5e20;
+}
+
+.iniciativa-item p {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Bloque comunidad */
+.bloque-comunidad {
+  margin: 2rem;
+  padding: 1.5rem;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  background-color: #f0fff0;
+}
+
+.bloque-comunidad h2 {
+  color: #2e7d32;
+  font-size: 1.5rem;
+}
+
+/* Botón ver más */
+.btn-ver {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver:hover {
+  background-color: #388e3c;
+}
+
+/* Crear */
+.crear {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main, .iniciativas-lista, .login-container, form {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Intro destacada */
+.intro {
+  background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Cierre final */
+.cierre {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f0f4f0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cierre h2 {
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
